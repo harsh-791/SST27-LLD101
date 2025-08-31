@@ -18,6 +18,9 @@ public class AppSettings implements Serializable {
     private static volatile AppSettings instance;
 
     private AppSettings() {
+        if (instance != null) {
+            throw new RuntimeException("Use getInstance() method to get the singleton instance");
+        }
     } // should not be public for true singleton
 
     public static AppSettings getInstance() {
@@ -29,6 +32,10 @@ public class AppSettings implements Serializable {
             }
         }
         return instance;
+    }
+
+    private Object readResolve() throws ObjectStreamException {
+        return getInstance(); // "Give me the existing singleton, don't create new"
     }
 
     public void loadFromFile(Path file) {
