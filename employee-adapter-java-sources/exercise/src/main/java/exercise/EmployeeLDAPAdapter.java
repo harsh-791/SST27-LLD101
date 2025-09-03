@@ -1,3 +1,5 @@
+package exercise;
+
 public class EmployeeLDAPAdapter implements Employee {
     private final EmployeeLDAP employeeLDAP;
 

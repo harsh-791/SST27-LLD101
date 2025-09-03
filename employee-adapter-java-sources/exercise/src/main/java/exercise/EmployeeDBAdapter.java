@@ -1,3 +1,5 @@
+package exercise;
+
 public class EmployeeDBAdapter implements Employee {
     private final EmployeeDB employeeDB;
 
@@ -7,7 +9,7 @@ public class EmployeeDBAdapter implements Employee {
 
     @Override
     public String getId() {
-        return employeeDB.getId();
+        return String.valueOf(employeeDB.getId());
     }
 
     @Override
