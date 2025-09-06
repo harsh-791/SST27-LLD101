@@ -1,0 +1,10 @@
+101,john.doe@acme.com,John Doe
+102,sarah.lee@acme.com,Sarah Lee
+103,ravi.kumar@contoso.com,Ravi Kumar
+104,anita.sharma@contoso.com,Anita Sharma
+105,wei.zhang@example.org,Wei Zhang
+106,elena.garcia@example.org,Elena Garcia
+107,invalid-email,Invalid User
+108,,Empty Email User
+109,test@valid.com,
+110,valid@email.com,Valid User
