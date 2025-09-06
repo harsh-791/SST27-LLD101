@@ -9,8 +9,8 @@ public class CsvProfileImporter implements ProfileImporter {
     private ProfileService profileService;
 
     public CsvProfileImporter(NaiveCsvReader naiveCsvReader, ProfileService profileService) {
-        this.naiveCsvReader = Objects.requireNonNull(naiveCsvReader, "naiveCsvReader cannot be null");
-        this.profileService = Objects.requireNonNull(profileService, "profileService cannot be null");
+        this.naiveCsvReader = naiveCsvReader;
+        this.profileService = profileService;
     }
 
     @Override
@@ -21,10 +21,10 @@ public class CsvProfileImporter implements ProfileImporter {
 
         for (String[] row : rows) {
             if (isValid(row)) {
-                String id = Objects.requireNonNull(row[0], "id cannot be null").trim();
-                String email = Objects.requireNonNull(row[1], "email cannot be null").trim();
-                String displayName = Objects.requireNonNull(row[2], "displayName cannot be null").trim();
-                    
+                String id = row[0].trim();
+                String email = row[1].trim();
+                String displayName = row[2].trim();
+
                 profileService.createProfile(id, email, displayName);
                 System.out.println("Created: " + id + " " + email + " " + displayName);
                 count++;
