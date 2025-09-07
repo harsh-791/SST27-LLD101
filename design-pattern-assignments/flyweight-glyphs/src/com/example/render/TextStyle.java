@@ -1,9 +1,9 @@
 package com.example.render;
 
-public class TextStyle {
-    public final String font;
-    public final int size;
-    public final boolean bold;
+public final class TextStyle {
+    private final String font;
+    private final int size;
+    private final boolean bold;
 
     public TextStyle(String font, int size, boolean bold) {
         this.font = font;
